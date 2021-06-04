@@ -1,0 +1,397 @@
+@media only screen and (max-width: 1441px) {
+  .main,
+  .home-slide {
+    /*width: 784px;*/
+    /* = 0.8 * 980 */
+    /*padding-left: 220px;*/
+    /*margin-left: calc( ((100% - 1044px) / 2) + 260px ); !*1044 = 260px (left slide bar) + 784 px (main content) *!;*/
+  }
+}
+@media only screen and (max-width: 1367px) {
+  .sidebar .alogo {
+    margin: 10px 0;
+  }
+  .sidebar .alogo img {
+    height: 30px;
+  }
+}
+@media screen and (max-width: 1281px) {
+  .sidebar {
+    display: none;
+  }
+  .tabbar {
+    display: block;
+  }
+  .main,
+  .home-slide {
+    width: 100%;
+    /*padding-left: 0;*/
+    margin: 0 auto;
+  }
+  .main {
+    padding: 0 10px;
+  }
+  body {
+    padding-bottom: 70px;
+  }
+  .sidebar .alogo {
+    margin: 15px 0;
+  }
+  .sidebar .alogo img {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .sidebar .alogo {
+    margin: 15px 0;
+  }
+  .sidebar .alogo img {
+    height: 50px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .tabbar {
+    display: block;
+    padding-left: 0;
+  }
+  .main {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  legend {
+    font-size: 17px;
+  }
+  .main_sdk .game-title-icon img {
+    top: 15px !important;
+  }
+  body {
+    padding-bottom: 70px;
+  }
+  .expland {
+    display: none;
+  }
+  .home-slide {
+    padding-left: 0;
+  }
+  .home-slide {
+    height: auto !important;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .main,
+  .main-regular {
+    width: 100% !important;
+    padding: 0;
+  }
+  .main .panel-title {
+    font-size: 14px;
+  }
+  .main .panel .list-service li a img {
+    width: 65%;
+    border-radius: 10%;
+  }
+  .main .panel .list-service li a {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .services {
+    min-height: 190px;
+  }
+  .services li a img {
+    width: 70%;
+    height: 80px;
+    object-fit: contain;
+  }
+  .services li .small-link {
+    bottom: 56px;
+    right: 18% !important;
+  }
+  .packages .list-package {
+    display: block;
+    flex-direction: unset;
+  }
+  .packages .list-package li {
+    width: 46.8%;
+    border: 1px solid #e9e9e9;
+    padding: 0;
+    margin: 0 6px 15px 8px;
+    display: inline-block;
+  }
+  .packages .list-package li .money {
+    font-size: 13px;
+  }
+  .packages .break {
+    display: none !important;
+  }
+  .main .panel .form-control {
+    margin-bottom: 15px;
+  }
+  .main .panel-title > span {
+    top: 30px;
+  }
+  .main .panel-title > span > img {
+    /*top: 30px;*/
+  }
+  .charge-game .server-game {
+    margin: 0;
+  }
+  .direct-payment-content-wrapper .table-bill-wrapper {
+    width: 100%;
+    border: 0;
+  }
+  .main .profile {
+    padding: 0;
+  }
+  .main .profile .profile-pill .nav-item span img {
+    width: 50%;
+  }
+  .main .profile .ptext {
+    display: none !important;
+  }
+  .nav > li > a {
+    padding: 4px;
+  }
+  .general .vip-info li img {
+    width: 50%;
+  }
+  .general .vip-info li .username,
+  .general .vip-type {
+    font-size: 14px;
+  }
+  .general .vip-info {
+    margin-top: 30px;
+  }
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .row {
+    margin-right: -10px !important;
+    margin-left: -10px !important;
+  }
+  .home-slide .col-md-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* [class*="col-"] {
+		padding-left: 5px;
+		padding-right: 5px;
+	} */
+  .card-info {
+    float: left;
+    width: 100%;
+  }
+  #w4vnID .btn-group .large-btn {
+    font-size: 16px;
+  }
+  .general .vip-info li:first-child,
+  .general .vip-info li:last-child {
+    padding-top: 15px;
+  }
+  .general .vip-info li {
+    margin: 0;
+  }
+  .main .profile .toggle-form.collapsed::before {
+    right: -5px;
+  }
+  .main .profile .turnOnAuth2 {
+    top: 0px;
+  }
+  .sb-menu-collape a,
+  .sb-topup-collape a {
+    display: block;
+    margin: 10px 0 0 0 !important;
+  }
+  .tbl-transfer-hist {
+    width: 780px !important;
+  }
+  .general .vip-info li .username {
+    width: auto;
+  }
+  .general .vip-info li:last-child {
+    width: auto;
+  }
+  .download-app .btn {
+    min-width: auto;
+    width: auto;
+  }
+  .payment-method .card-item {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+  .main .panel .m-list-service a img {
+    width: 100%;
+  }
+  .form-head {
+    top: 18px;
+    width: 35%;
+  }
+  .form-head .form-control {
+    background: #e9e9e9;
+    min-width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .packages .list-package li {
+    width: 45%;
+  }
+  #w4vnID .btn-group .large-btn {
+    font-size: 14px;
+  }
+  .payment-method .card-item {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+  .payment-method .card-item img {
+    display: block;
+    margin: 0 auto;
+  }
+  .general .vip-info {
+    flex-direction: column;
+  }
+  .general .vip-info li:first-child,
+  .general .vip-info li:last-child {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .general .vip-info li .username,
+  .general .vip-type {
+    font-size: 14px;
+  }
+  .general .vip-info li img {
+    width: 40%;
+  }
+  .profile-email {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 150px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .profile-mobile {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .collap-unfreeze,
+  .collap-freeze {
+    margin-right: 0;
+  }
+  .main .panel-title > span {
+    top: 8px;
+  }
+  .main .panel-title > span > img {
+    /*top: 35px;*/
+  }
+  .main .panel-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 25px !important;
+  }
+  .detail-post-title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 375px) {
+  .services {
+    min-height: 120px;
+  }
+  .services li a img {
+    width: 70%;
+    height: 80px;
+    object-fit: contain;
+  }
+  .services li {
+    margin-top: 20px;
+  }
+  .services li .small-link {
+    display: none;
+  }
+  .main .panel-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .row {
+    margin-right: -10px !important;
+    margin-left: -10px !important;
+  }
+  .general .vip-info li .username,
+  .general .vip-type {
+    font-size: 14px;
+  }
+  .general .vip-info {
+    margin-top: 15px;
+  }
+  .general .vip-info li img {
+    width: 30%;
+  }
+  .main .profile {
+    padding: 0;
+  }
+  .tabbar .tab-menu li {
+    font-size: 10px;
+  }
+  .tab-submenu {
+    margin-bottom: 0;
+    bottom: 65px;
+  }
+  .packages .list-package li .money {
+    font-size: 10px;
+  }
+  #w4vnID .btn-group .large-btn {
+    font-size: 13px;
+  }
+
+  #w4vnID .btn-group .small-btn {
+    padding-left: 6px;
+  }
+  .payment-method .card-item {
+    text-align: center;
+  }
+  .payment-method .card-item img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .profile-email {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 150px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .profile-mobile {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .collap-unfreeze,
+  .collap-freeze {
+    margin-right: 0;
+  }
+  .main .panel-title > span {
+    top: 34px;
+  }
+  .main .panel-title > span > img {
+    top: 34px;
+  }
+}

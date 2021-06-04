@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>W4VN ID</title>
+        <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css" />
+        <link rel="stylesheet" href="/asset/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/asset/css/animate.min.css" />
+        <link rel="stylesheet" href="/asset/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/asset/css/style.css" />
+        <link rel="stylesheet" href="/asset/css/sweetalert2.min.css" />
+        <link rel="stylesheet" href="/asset/css/responsive.css" />
+        <link rel="stylesheet" href="/asset/css/daterangepicker.css" />
+        <link rel="stylesheet" href="/asset/css/jquery-ui.min.css?v=117" />
+        <script src="/asset/js/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+        <script src="/asset/js/bootstrap.min.js"></script>
+        <script src="/asset/js/sweetalert2.min.js"></script>
+        <script src="/asset/js/owl.carousel.min.js"></script>
+        <script src="/asset/js/main_sdk.js"></script>
+        <script src="/asset/js/daterangepicker.js?v=117"></script>
+        <script src="/asset/js/moment.min.js?v=117"></script>
+        <script src="/asset/js/jquery-ui.min.js?v=117"></script>
+        <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/vi_VN/appleid.auth.js"></script>
+        <script>
+            let apiHost = "";
+            let apiPmHost = "/pm";
+            let contentType = "application/json";
+            let homeUrl = "/";
+            let clientId = "w4vn.apple.signin.group";
+            let redirectURI = "https://ids-tsmb.w4vn.net/apple/callback";
+        </script>
+    </head>
+    <body>
+        <div class="modal-md acc_md" id="w4vnID" role="document">
+            <div class="modal-sdk-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="close_webview();" aria-label="Close">
+                        <span aria-hidden="true"><i class="cil-x"></i></span>
+                    </button>
+                    <h4 class="modal-title">Đăng nhập</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <div class="alert alert-danger hidden" role="alert" id="loginFBMessage"></div>
+                    <!-- <div class="form-group">-->
+                    <!-- <div class="col-xs-12">-->
+                    <!-- <div class="btn-group" role="group">-->
+                    <!-- <a href="javascript:;" role="button" class="btn btn-danger small-btn"><img src="/asset/images/g-ico.png" alt="" /></a>-->
+                    <!-- <a href="javascript:;" id="login-with-id" role="button" class="btn btn-danger large-btn">W4VN ID</a>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <div class="alert alert-danger hidden" role="alert" id="loginMessage"></div>
+                    <form action="" id="loginForm" method="post">
+                        <input type="hidden" id="input-lcaptcha" />
+                        <div class="form-group">
+                            <!-- <div class="finput has-feedback"><img style="width: auto; height: " src="/asset/images/r18.jpg" style="float: right;" /></div> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input type="text" class="form-control" name="username" id="username" placeholder="Tên đăng nhập" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input type="password" class="form-control" name="userpass" id="userpass" placeholder="Mật khẩu" /></div>
+                        </div>
+                        <div class="form-group hidden" id="login-web-captcha">
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" name="log_captcha" id="login-web-captcha" placeholder="Nhập mã bảo vệ" />
+                                <div class="login-captcha" id="loginCaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input type="hidden" id="service" name="service" value="9" /> <input type="hidden" id="os_id" name="os_id" value="2" /> <input type="hidden" id="referent_id" name="referent_id" value="1" />
+                                <input type="hidden" name="new_sdk" id="new_sdk" value="" /> <button type="submit" class="btn btn-danger btn-block" id="btnLogin">Đăng nhập</button>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                        <!--<div class="col-xs-12">-->
+                        <!--<button type="button" class="btn btn-primary btn-block btnBackHome">Quay lại</button>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<p>Bạn chưa có tài khoản ? <a href="javascript:;" id="register-from-login"><strong>Đăng ký ngay</strong></a></p>-->
+                    </form>
+                    <!-- <div class="form-group">-->
+                    <!-- <div class="col-xs-12">-->
+                    <!-- <div class="btn-group" role="group">-->
+                    <!-- <a href="#" role="button" data-service="1" class="btn btn-primary btn-block" id="click-facebook"><i class="fa fa-facebook"></i> &nbsp; Đăng nhập bằng Facebook</a>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <!---->
+                    <!-- <div class="form-group">-->
+                    <!-- <div class="col-xs-12">-->
+                    <!-- <div class="btn-group" role="group">-->
+                    <!-- <a href="#" role="button" data-service="1" class="btn btn-danger btn-block" id="click-google"><i class="fa fa-google"></i> &nbsp; Đăng nhập bằng Google</a>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <!--<div class="form-group">-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<div id="appleid-signin" data-color="white" data-border="false" class="apple-signin-button" data-type="sign in"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!-- <div class="form-group">-->
+                    <!-- <div class="col-xs-12">-->
+                    <!-- <a href="#" role="button" id="click-playnow" class="btn btn-danger btn-block playnow">Chơi ngay</a>-->
+                    <!-- </div>-->
+                    <!-- </div>-->
+                    <p>
+                        Bạn chưa có tài khoản ? <a href="javascript:;" id="register-now"><strong>Đăng ký ngay</strong></a>
+                    </p>
+                    <p id="test_vitti"></p>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-8 col-xs-12">
+                            <p class="text-left">Sử dụng W4VN ID để được bảo vệ tốt nhất</p>
+                            <p class="text-left">
+                                <strong>Hotline: <a href="tel:0927382922">0927382922</a></strong>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <a href="/support" role="button" class="btn btn-default link-support"><i class="cil-life-ring"></i> Hỗ trợ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-md acc_md" style="display: none;" id="register-md" role="document">
+            <div class="modal-sdk-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="close_webview();" aria-label="Close">
+                        <span aria-hidden="true"><i class="cil-x"></i></span>
+                    </button>
+                    <h4 class="modal-title">Đăng ký</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger hidden" role="alert" id="registerMessage"></div>
+                    <form action="#" class="form-horizontal" method="post" id="registerForm">
+                        <input type="hidden" id="input-rcaptcha" /> <input type="hidden" name="service" value="9" /> <input type="hidden" name="referent_id" value="1" /> <input type="hidden" name="os_id" value="2" />
+                        <input type="hidden" name="new_sdk" id="new_sdk" value="" />
+                        <div class="form-group">
+                            <!-- <div class="finput has-feedback"><img src="/asset/images/r18.jpg" style="float: right;" /></div> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input type="text" class="form-control" name="username" placeholder="Tên đăng nhập" /></div>
+                        </div>
+                        <!-- <div class="form-group">-->
+                        <!-- <div class="col-xs-12">-->
+                        <!-- <input type="email" class="form-control" name="email" placeholder="Email" />-->
+                        <!-- </div>-->
+                        <!-- </div>-->
+                        <!-- <div class="form-group">-->
+                        <!-- <div class="col-xs-12">-->
+                        <!-- <input type="number" class="form-control" name="phone" placeholder="Số điện thoại" />-->
+                        <!-- </div>-->
+                        <!-- </div>-->
+                        <div class="form-group">
+                            <div class="col-xs-12"><input class="form-control" type="text" id="register_mobile" name="mobie" placeholder="Số điện thoại" required="required" aria-required="true" aria-invalid="true" /></div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="col-xs-12"><input class="form-control" type="text" id="register_cmt" name="cmt" placeholder="Số CMT" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input class="form-control" type="text" id="register_cmt_no" name="cmt_no" placeholder="Ngày cấp" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input class="form-control" type="text" id="register_birth" readonly name="birthday" placeholder="Ngày sinh" required="required" aria-required="true" aria-invalid="true" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input class="form-control" type="text" id="register_address" name="address" placeholder="Địa chỉ" /></div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-xs-12"><input type="password" class="form-control" name="userpass" id="register-pass" placeholder="Mật khẩu" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><input type="password" class="form-control" name="confirm_pass" placeholder="Xác nhận mật khẩu" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><button type="submit" class="btn btn-danger btn-block" id="btnRegister">Đăng ký</button></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><button type="button" class="btn btn-primary btn-block btnBackHome">Quay lại</button></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-8 col-xs-12">
+                            <p class="text-left">Sử dụng W4VN ID để được bảo vệ tốt nhất</p>
+                            <p class="text-left">
+                                <strong>Hotline: <a href="tel:0927382922">0927382922</a></strong>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <a href="/support" role="button" class="btn btn-default link-support"><i class="cil-life-ring"></i> Hỗ trợ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-md acc_md" id="sdk-confirm-login" style="display: none;">
+            <div class="modal-sdk-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="close_webview();" aria-label="Close">
+                        <span aria-hidden="true"><i class="cil-x"></i></span>
+                    </button>
+                    <h4 class="modal-title">Xác thực OTP</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-horizontal" id="sdkLoginConfirm" method="post">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input type="text" name="sdk_otp_code" class="form-control" placeholder="Nhập mã OTP" /> <input type="hidden" name="uuid" id="uuid" value="" /> <input type="hidden" name="auth" id="auth" value="" />
+                                <input type="hidden" name="user_id" id="user_id" value="" /> <input type="hidden" name="user_hash" id="user_hash" value="" /> <input type="hidden" id="hidden_email" value="" />
+                                <input type="hidden" id="hidden_phone" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12"><button type="submit" class="btn btn-danger text-uppercase btn-block">Xác thực</button></div>
+                        </div>
+                        <hr />
+                        <p class="text-muted"><small>Nếu bạn bị mất hoặc không có thiết bị cài đặt phần mềm xác thực, vui lòng lựa chọn hình thức gửi mã dưới đây</small></p>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="sdkcfhasEmail" class="hidden">
+                                    <div class="btn-group btn-block" role="group">
+                                        <a href="javascript:;" role="button" style="width: 15%;" class="btn btn-default small-btn"> <i class="cil-envelope-closed"></i> </a>
+                                        <a href="javascript:;" id="send-otp-email" style="width: 85%;" role="button" class="btn btn-default large-btn"> GỬI OTP TỚI EMAIL </a>
+                                    </div>
+                                </div>
+                                <br />
+                                <div id="sdkcfhasPhone" class="hidden">
+                                    <div class="btn-group btn-block" role="group">
+                                        <a href="javascript:;" role="button" style="width: 15%;" class="btn btn-default small-btn"> <i class="cil-phone"></i> </a>
+                                        <a href="javascript:;" id="send-otp-sms" style="width: 85%;" role="button" class="btn btn-default large-btn"> GỬI SMS TỚI SỐ ĐIỆN THOẠI </a>
+                                    </div>
+                                    <p class="text-center"><small class="text-muted text-center">Phí tin nhắn là 1000 vnd</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p><span class="confirm-error"></span></p>
+                </div>
+            </div>
+        </div>
+        <script src="/asset/js/sdk/account.js?v=137"></script>
+    </body>
+</html>

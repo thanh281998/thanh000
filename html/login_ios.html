@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="//cdn1.oss.99maiyou.com/libs/sdk2/favicon.ico?version=20200105" type="image/vnd.microsoft.icon">
+    <link href="//cdn1.oss.99maiyou.com/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/sdk2/static/viewjs/view.1.5.0.min.css?version=20200625">
+    <link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/sdk2/static/viewjs/animation.css?version=20200625">
+    <link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/sdk2/assets/css/reset.css?version=20200625">
+    <link rel="stylesheet" href="/assets/css/css.css?version=20200627">
+    <link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/sdk2/assets/css/alt.css?version=20200627">
+</head>
+
+<body>
+
+<script src="//cdn1.oss.99maiyou.com/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajaxSetup({
+                headers: {"Agent":"c1mt","Device-Type":"3","Device-Version":"iOS14.1","Imei":"D8702B69-8948-4E83-BB48-1497C1D9BF65","Appid":"5071","Gameid":"5083","Udid":"","Clienttype":"ios"}            });
+        });
+    </script>
+
+<section id="login" data-view="true" data-view-title="登录">
+    <div class="body width login">
+    <div class="user-login">
+        <div class="home"><a href="javascript:openBoxApp()"><i class="fa fa-home"></i><span>官网</span></a></div>
+        <div class="logo"><img src="https://storage.milu.com/agent-material/default/logo.png" alt=""></div>
+        <form method="post" name="login">
+            <div class="item">
+                <span class="fa fa-user"></span>
+                <input type="text" name="username" placeholder="用户名" autocapitalize="off" autocorrect="off">
+                <i class="fa fa-angle-down c1mt"></i>
+                <div class="users">
+                    <ul>
+                                            </ul>
+                </div>
+            </div>
+            <div class="item">
+                <span class="fa fa-lock"></span>
+                <input type="password" name="password" placeholder="密码">
+            </div>
+
+            <input type="hidden" name="agent" value="c1mt">
+            <input type="hidden" name="appid" value="5071">
+            <input type="hidden" name="gameid" value="5083">
+
+            <div class="item"><input type="submit" value="登录"></div>
+        </form>
+        <div class="action clearfix">
+            <a data-view-rel="mobileRegister">快速注册</a>
+            <a data-view-rel="findPass">忘记密码？</a>
+        </div>
+        
+
+
+        <!--            <div  style="margin-top: 5%">-->
+<!--                <a href="javascript:openBoxApp()"><img src="http://cdn1.oss.99maiyou.com/active/dongyuan1.png" alt=""></a>-->
+<!--            </div>-->
+        
+
+
+
+                        <div class="bottom">
+            QQ在线客服：<a href="javascript:maiyou.open('mqqwpa://im/chat?chat_type=wpa&uin=游戏任何问题，请加客服QQ号：1590424017&version=1&src_type=web&web_src=oicqzone.com')">游戏任何问题，请加客服QQ号：1590424017</a><br/>
+            <span style="font-size: 14px;">在线时间：09:30-23:00</span>
+            <!--<div class="bottomTips">
+                温馨提示：领取返利、充值道具等各类问题，请联系客服；
+                                    如出现‘无法验证应用’请联系客服获取最新下载地址。
+                            </div>-->
+        </div>
+    </div>
+</div>
+
+<script>
+    var winHeight = $(window).height();   //获取当前页面高度
+        $(window).resize(function(){
+           var thisHeight=$(this).height();
+            if(winHeight - thisHeight >50){
+                 //当软键盘弹出，在这里面操作
+            $(".bottom").hide();
+            }else{
+                //当软键盘收起，在此处操作
+            $(".bottom").show();
+            }
+        });
+</script>
+
+<div class="microAuthentication">
+    <div class="authenticationContainer">
+        <div class="authenticationTitle">
+            <div class="back fa fa-angle-left"></div>
+            <div class="text">实名认证</div>
+            <div class="close"></div>
+        </div>
+        <div class="authenticationContent">
+            <h1>尊敬的用户：</h1>
+            <p>根据国家规定，游戏用户需登记个人实名信息，否则会受防沉迷限制 <a href="javascript:void(0);" onclick="lookother()" style="color: red">查看限制></a>。信息仅用于国家规定的实名认证，不会用于其他用户且绝对保密！</p>
+            <div id="errorMsg" style="display: none;text-align: left"></div>
+            <div id="sf_info">
+                <form name="authentication" action="/authentication">
+                    <input type="text" name="name" placeholder="请输入姓名" required>
+                    <input type="text" name="number" placeholder="请输入身份证" required>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+            <div>首次完成实名认证即可在游戏盒子的任务中心领取30个金币奖励。</div>
+        </div>
+    </div>
+</div>
+
+<div class="authenticationContainer1">
+    <div class="authenticationTitle1">
+        <div class="text" style="text-align: center;font-size: 18px;font-weight: 800;margin-bottom: 10px">防沉迷详情</div>
+        <div class="close1" onclick="qiehuan()"></div>
+    </div>
+    <div class="authenticationContent" style="overflow-y: scroll;height: 230px;">
+        <p>根据国家相关防沉迷的规定，未成年用户将受到以下游戏限制：</p>
+        <p style="font-weight: 800">一、每天在线时长</p>
+        <p>1、未实名用户每天限玩1小时</p>
+        <p>2、未成年用户每天限玩1.5小时，节假日限玩3小时，且每天晚上22:00至次日08:00之间无法登陆游戏</p>
+        <p style="font-weight: 800"> 二、游戏支付限制</p>
+        <p>1、未实名和8周岁以下用户将禁止支付行为</p>
+        <p>2、8周岁以上未满16周岁的未成年用户，单次充值金额不能超过50元人民币，每月累计不能超过200元人民币</p>
+        <p>3、已满16周岁未满18周岁的未成年用户，单次充值金额不能超过100元人民币，每月累计不能超过400元人民币</p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        try {
+            localforage.getItem('users').then(function (users) {
+                $('.login .users ul').html('');
+                if ($.isArray(users)) {
+                    $.each(users, function (i, user) {
+                        $('.login .users ul').append('<li>' +
+                            '<p>' + user.username + '</p>' +
+                            '<i class="fa fa-remove"></i>' +
+                            '<input type="hidden" name="users.username" value="' + user.username + '" disabled>' +
+                            '<input type="hidden" name="users.password" value="' + user.password + '" disabled>' +
+                            '</li>');
+                        $('.login .users li').first().trigger('click', false);
+                    });
+                }
+            }).catch(function (e) {
+                console.log(e);
+            });
+        } catch (e) {
+            console.log(e);
+        }
+
+        View.ofId('login').on('enter', function (e) {
+            if (e.data.params) {
+                $('.login :input[name=username]').val(e.data.params.username);
+                $('.login :input[name=password]').val(e.data.params.password);
+            }
+        });
+    });
+
+    function  lookother(){
+        $('.authenticationContainer').hide();
+        $('.authenticationContainer1').show();
+    }
+
+    function  qiehuan(){
+        $('.authenticationContainer').show();
+        $('.authenticationContainer1').hide();
+    }
+
+
+    function getUserData(username, password, forcibly) {
+        if (($('.login :input[name=username]').val() || $('.login :input[name=password]').val()) && !forcibly) {
+            return false;
+        }
+        if (username) {
+            $('.login :input[name=username]').val(username);
+            if (password) {
+                $('.login :input[name=password]').val(password);
+            } else {
+                $.get('/account/getPassword', {username: username}).done(function (result) {
+                    $('.login :input[name=password]').val(result);
+                });
+            }
+        }
+    }
+
+    getUserData('', '', true);
+
+    $(document).on('click', '.login .item > i', function (event) {
+        event.stopPropagation();
+        $('.users').toggleClass('active');
+        $('.users').trigger('diyCheck');
+    });
+    $('.login').parent().on('click', function () {
+        $('.login .users').removeClass('active');
+    });
+    $(document).on('click', '.login .users li', function (event, forcibly) {
+        getUserData($(this).find(':input[name="users.username"]').val(), $(this).find(':input[name="users.password"]').val(), forcibly !== false ? true : false);
+    });
+    $('.users li').first().trigger('click', false);
+    $(document).on('click', '.login .users li i', function (event) {
+        event.stopPropagation();
+        var self = $(this);
+        var el = $(self).parent();
+        var username = $(el).find(':input[name="users.username"]').val();
+        try {
+            localforage.getItem('users').then(function (users) {
+                $.each(users, function (i, user) {
+                    if (user.username == username) {
+                        users.splice(i, 1);
+                        return false;
+                    }
+                });
+                localforage.setItem('users', users).then(function (users) {
+                    console.log(users);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        } catch (e) {
+            console.log(e);
+        }
+        $(el).slideUp(function () {
+            $(el).remove();
+            if ($(':input[name=username]').val() == username) {
+                $(':input[name=username]').val('');
+                $(':input[name=password]').val('');
+            }
+            $(el).remove();
+        });
+        $('.users').trigger('diyCheck');
+    });
+    $(document).on('diyCheck', '.login .users', function (event) {
+        event.stopPropagation();
+        if ($('.users li').size() == 0) {
+            $('.users').removeClass('active');
+        }
+    });
+    $(document).on('input', '.login :input[name="password"]', function () {
+        if (/.*[\u4e00-\u9fa5]+.*$/.test($(this).val())) {
+            $(this).val('');
+            maiyou.alert('不能包含中文字符！');
+        }
+    });
+</script>
+<script>
+    try {
+        $(function () {
+            $('form[name=login]').on('submit', function (event) {
+                event.preventDefault();
+                var form = $(this);
+                $('.loading').show();
+                $.post($(form).attr('action'), $(form).serialize()).always(function () {
+                    $('.loading').hide();
+                }).fail(function (request, error) {
+                    if (error == 'timeout' || request.status == 0) {
+                        maiyou.alert('暂无网络 请检查网络状态');
+                    } else if (error == 'error') {
+                        maiyou.alert(request.status + ' ' + request.statusText);
+                    } else {
+                        maiyou.alert(error);
+                    }
+                }).done(function (result) {
+                    console.log(result);
+                    if (result.status.succeed == 1) {
+
+                        try {
+                            localforage.getItem('users').then(function (users) {
+                                var newUser = {
+                                    username: $(form).find(':input[name=username]').val(),
+                                    password: $(form).find(':input[name=password]').val(),
+                                };
+                                if (!$.isArray(users)) {
+                                    users = [];
+                                }
+                                $.each(users, function (i, user) {
+                                    if (user.username == newUser.username) {
+                                        users.splice(i, 1);
+                                        return false;
+                                    }
+                                });
+                                if (users.length >= 10) {
+                                    users = users.slice(0, 9);
+                                }
+                                users.unshift(newUser);
+                                localforage.setItem('users', users).then(function (users) {
+                                    console.log(users);
+                                }).catch(function (err) {
+                                    console.log(err);
+                                });
+                            }).catch(function (err) {
+                                console.log(err);
+                            });
+                        } catch (e) {
+                            console.log(e);
+                        }
+
+                        if (result.data.authentication == 2) {
+                            $('.microAuthentication').fadeIn();
+                            $('.microAuthentication .back, .microAuthentication .close').click(function () {
+                                View.changeTo('alt');
+                            });
+                            $('form[name=authentication]').submit(function (event) {
+                                event.preventDefault();
+                                $('.loading').show();
+                                $.post($(this).attr('action'), $(this).serialize()).always(function () {
+                                    $('.loading').hide();
+                                }).fail(function (request, error) {
+                                    maiyou.alert(error);
+                                }).done(function (result) {
+
+                                    if (result.status == 1) {
+                                        $("#errorMsg").html("");
+                                        var smallname = $("#sf_info");
+                                        smallname.html(""); //清空原有的选项
+                                        var str = '';
+                                        str+= "<div style=\"width: 20%;float: left;\">姓名：</div>";
+                                        str+="<div style=\"float: left;width: 80%;text-align: left;\">"+result.name+"</div>";
+                                        str+="<div style=\"width: 20%;float: left;margin-bottom: 4%;\">身份证：</div>";
+                                        str+="<div style=\"float: left;width: 80%;text-align: left;margin-bottom: 4%;\">"+result.Idcard+"</div>";
+                                        str+="<div><img src=\"/assets/img/yirenzheng.png\" style=\"width: 15%;float: right;margin-top: -12%;margin-bottom: 5%;margin-right: 8%;\"></div>";
+                                        smallname.append(str);
+                                    } else {
+                                        $("#errorMsg").html("");
+                                        $("#errorMsg").append(result.info);
+                                        $("#errorMsg").css("display","block")
+                                        // maiyou.alert();
+                                    }
+                                });
+                            });
+                        } else {
+                            View.changeTo('alt');
+                        }
+                    } else {
+                        maiyou.alert(result.status.error_description);
+                    }
+                });
+            });
+        });
+    } catch (e) {
+        console.log(e);
+        maiyou.alert(e.message);
+    }
+</script></section>
+<section id="alt" data-view="true" data-view-title="选择小号">
+    <div class="width">
+    <header>
+        <div class="title">选择小号</div>
+</header>    <div class="alt" >
+        <div class="user clearfix">
+            <p><span></span>，欢迎归来</p>
+            <a href="/logout">注销</a>
+        </div>
+        <div class="action">
+            <div class="clearfix">
+                <h1>选择小号进入游戏 <i>?</i></h1>
+                <button class="add">添加</button>
+                <button class="test" style="display: none;">测试</button>
+            </div>
+            <p>可创建10个小号，创建后不可删除或者修改</p>
+        </div>
+        <div class="boxapp">
+            <img src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/img/hot.gif?version=2019.06.16" alt="">
+            <div>
+                <section>
+                    <a href="javascript:openBoxApp()">点击下载咪噜游戏 ！每天赚金币，充值无压力！</a>
+                </section>
+            </div>
+        </div>
+                <div class="activeButton clearfix">
+            <button data-id="news">最新活动</button>
+            <button data-id="rebate">返利表</button>
+            <button data-id="service">开服表</button>
+            <!--<button onclick="javascript:View.changeTo('rebateList');">返利</button>-->
+        </div>
+        <div class="list">
+            <ul>
+                            </ul>
+        </div>
+        <div class="microAuthentication" style="display: none">
+            <div class="authenticationContainer" style="display: none">
+                <div>
+                    <p style="width: 88%;text-align: center;padding: 3px;margin-left: 6%;font-weight: 800;margin-top: 10px;">未成年人保护须知</p>
+                    <p style="width: 90%;text-align: left;padding: 7px;margin-left: 5%;">本游戏适合18岁以上的用户使用。未实名用户请实名认证。适度游戏益脑，请您合理控制游戏时间，避免沉溺游戏影响生活。注意自我保护，防范网络陷阱。</p>
+
+                    <!--                    <p style="width: 90%;text-align: left;padding: 7px;margin-left: 5%;">未促进儿童/青少年玩家健康成长，我们推出游戏防沉迷设置。根据系统规定，认证为未成年的玩家，游戏时间将受到限制，具体规则如下：</p>-->
+                    <!--                    <p style="width: 90%;text-align: left;margin-left: 6%;">1,18岁以下：工作日1.5小时，节假日3小时</p>-->
+                    <!--                    <p style="width: 90%;text-align: left;margin-left: 6%;">2,未成年玩家在每日22:00-次日8:00期间将禁止登录游戏</p>-->
+                    <!--                    <p style="width: 90%;text-align: left;margin-left: 6%;">3,未完成实名登记的账号，15天内只能累计试玩1小时，1小时后需要完成实名登记方可继续游戏。</p>-->
+                    <div style="width: 25%;text-align: right;margin-left: 75%;text-align: center; margin-bottom: 10px;margin-top: 10px;color: #f5842d;" onclick="closea()">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alertActivity">
+        <div class="alertActivityWraper">
+            <div class="alertActivityContainer">
+                <img src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/img/activity2006.jpg?version=20200522" alt="">
+                <div class="btns">
+                    <button>立即参与</button>
+                    <button>进入游戏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="http://sdk2.99maiyou.com/user/canRebateList"   onclick="" name="a" style="display: none" class="fanlis">
+        <div style="width: 120px;height: 110px;position: fixed; z-index: 9999;top: 70%;left: -50px;">
+            <div style="width: 45%;float: left;margin-left: 50%;">
+                <img src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/img/rebate/shenqing1.png">
+            </div>
+            <div class="red_bg" style="width: 15%;
+    height: 18px;
+    background: red;
+    float: left;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    line-height: 18px;
+    margin-left: -24px;
+    margin-top: -5%;
+    font-size: 0.7rem;
+    display: none">
+            </div>
+        </div>
+    </a>
+
+    <script id="altDilogTpl" type="text/html">
+        <div class="loginRemind">
+            <section>
+                <div class="loginRemindClose"><i class="fa fa-close"></i></div>
+                <div class="loginRemindTitleContainer">
+                    <div class="loginRemindTitle">{{ d.title }}</div>
+                </div>
+                <div class="loginRemindContent">{{ d.content }}</div>
+                <div class="loginRemindButton">
+                    {{# $.each(d.button, function(index, item){ }}
+                    <button>{{ item.text }}</button>
+                    {{# }); }}
+                </div>
+            </section>
+        </div>
+    </script>
+</div>
+
+<script>
+    function closea() {
+        $('.microAuthentication').hide();
+    }
+
+    var member;
+    var news;
+    var compensate;
+    function load() {
+        $('.loading').show();
+        var oldurl = document.referrer;
+        console.log(oldurl);
+        $.getJSON('/alt').always(function () {
+            $('.microAuthentication').hide();
+            $('.loading').hide();
+        }).fail(function (request, error) {
+            if (error == 'timeout' || request.status == 0) {
+                maiyou.alert('暂无网络 请检查网络状态');
+            } else if (error == 'error') {
+                maiyou.alert(request.status + ' ' + request.statusText);
+            } else {
+                maiyou.alert(error);
+            }
+        }).done(function (result) {
+            console.log(result);
+
+            member = result.member;
+            news = result.news;
+            compensate = result.compensate;
+
+            if(member.is_bohui != 0){
+                $('.red_bg').css('display','block');
+                $('.red_bg').text(member.is_bohui);
+            }
+
+            $('.fanlis').css('display','block');
+
+            // if(member.username == 'test0007' || member.username == 'ceshi1' || member.username == 'ceshi2' || member.username == 'ceshi3' || member.username == 'ceshi4' || member.username == 'ceshi5' || member.username == 'ceshi6'){
+            //     $('.fanlis').css('display','block');
+            // }
+
+           
+
+
+            if(!member.isAdult){
+                $('.microAuthentication').show();
+                $('.authenticationContainer').show();
+            }
+
+            $('.alt .user p span').html(member.username);
+            if (member.isTest) {
+                $('.alt .action .test').show();
+            } else {
+                $('.alt .action .test').hide();
+            }
+            if (result.alts) {
+                if (!result.alts || result.alts.length < 10) {
+                    $('.alt .action .add').show();
+                } else {
+                    $('.alt .action .add').hide();
+                }
+                $('.alt .list ul').html('');
+                $.each(result.alts, function (i, alt) {
+                    $('.alt .list ul').append('<li class="clearfix ' + (alt.status != 1 ? 'disabled' : '') + '">' +
+                        '<p>小号' + (i + 1) + '_' + alt.alias + '</p>' +
+                        '<i class="fa fa-angle-right"></i>' +
+                        '<span>进入游戏</span>' +
+                        '<input type="hidden" value="' + alt.xh_username + '">' +
+                        '</li>');
+                    $('.alt .list li').last().on('click', function () {
+                        login($(this).find(':input').val());
+                    });
+                });
+            }
+        });
+    }
+
+    function altDilog(params) {
+        var el = laytpl($('#altDilogTpl').html()).render({
+            title: params.title,
+            content: params.content,
+            button: params.button
+        });
+        $('body').append(el);
+
+        function close() {
+            $('.loginRemind').remove();
+            if (params.close) {
+                params.close();
+            }
+        }
+
+        $('.loginRemindClose').click(function () {
+            close();
+        });
+
+        function dilogTitleAnimate() {
+            if ($('.loginRemindTitle').width() > $('.loginRemindTitleContainer').width()) {
+                var left = 0;
+                if ($('.loginRemindTitle').position().left == 0) {
+                    left = -($('.loginRemindTitle').width() - $('.loginRemindTitleContainer').width());
+                }
+                $('.loginRemindTitle').animate({left: left}, 2000, function () {
+                    setTimeout(function () {
+                        dilogTitleAnimate();
+                    }, 500);
+                });
+            }
+        }
+
+        dilogTitleAnimate();
+        if (params.button) {
+            $.each(params.button, function (index, item) {
+                $('.loginRemindButton button').eq(index).click(function () {
+                    if (item.handle) {
+                        item.handle();
+                    }
+                    close();
+                });
+            });
+            $('.loginRemindButton').addClass('loginRemindButton' + params.button.length);
+        }
+    }
+
+    $(function () {
+        View.ofId('alt').on('enter', function (e) {
+            load();
+        });
+    });
+
+    var newsReaded;
+
+    function login(xh_username) {
+        function realLogin() {
+            $('.loading').show();
+            $.get('/alt/login', {xh_username: xh_username}).always(function () {
+                $('.loading').hide();
+            }).fail(function (request, error) {
+                if (error == 'timeout' || request.status == 0) {
+                    maiyou.alert('暂无网络 请检查网络状态');
+                } else if (error == 'error') {
+                    maiyou.alert(request.status + ' ' + request.statusText);
+                } else {
+                    maiyou.alert(error);
+                }
+            }).done(function (result) {
+                if (result.status == 1) {
+                    maiyou.loginXh(member.username, result.sign, member.lastlogintime, member.token, xh_username);
+                } else {
+                    maiyou.alert(result.info);
+                }
+            });
+        }
+
+        if (compensate) {
+            altDilog({
+                title: compensate.title,
+                content: compensate.content,
+                button: [{
+                    text: '下载盒子',
+                    handle: function () {
+                        openBoxApp();
+                    }
+                }, {
+                    text: '进入游戏'
+                }],
+                close: function () {
+                    realLogin();
+                }
+            });
+            return null;
+        }
+
+        if (member.loginTimes < 3 && ((new Date()).getTime() / 1000) < 1593388800) {
+            $('.alertActivity').show();
+            $('.alertActivity img, .alertActivity button:first').one('click', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $('.alertActivity').hide();
+                $.get('/behavior?type=vip&position=alt&username='+member.username);
+                openBoxApp();
+            });
+            $('.alertActivity button:last').one('click', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $('.alertActivity').hide();
+                realLogin();
+            });
+        } else if (navigator.userAgent.match(/iphone os|ipad/i) && !newsReaded && ((new Date()).getTime() / 1000) < 1565539200) {
+            if (member.loginTimes < 3) {
+                newsReaded = true;
+                altDilog({
+                    title: '公告',
+                    content: 'iOS端<span style="color: red;">普通版</span>游戏盒子闪退已经修复完毕，请点击“立即下载”重新安装，给您造成不便敬请谅解！（请务必先卸载之前安装的盒子，再重新下载）',
+                    button: [{
+                        text: '立即下载',
+                        handle: function () {
+                            openBoxApp();
+                        }
+                    }, {
+                        text: '进入游戏'
+                    }],
+                    close: function () {
+                        realLogin();
+                    }
+                });
+            } else {
+                realLogin();
+            }
+        } else {
+            if (member.loginTimes < 2 && news && !newsReaded) {
+                newsReaded = true;
+                altDilog({
+                    title: news.title,
+                    content: news.content,
+                    button: [{
+                        text: '进入游戏'
+                    }],
+                    close: function () {
+                        realLogin();
+                    }
+                });
+            } else {
+                realLogin();
+            }
+        }
+    }
+
+    $(function () {
+        $('.alt .action i').on('click', function () {
+            $(document).dialog({
+                overlayClose: true,
+                titleText: '关于小号',
+                content: '<p style="text-align: left;text-indent: 2em;">解决同区服玩多个角色需要重复创建账号的问题，同时也避免账号过多不易记住。</p>',
+                buttonTextConfirm: '我知道了'
+            });
+        });
+        $('.alt .action button.add').on('click', function () {
+            $(document).dialog({
+                type: 'confirm',
+                titleText: '添加新小号',
+                content: '<input type="text" name="alias" placeholder="名称不能超过8个字符" autofocus >',
+                onClickConfirmBtn: function () {
+                    var dialog = $(document).dialog({
+                        type: 'notice',
+                        infoText: '加载中...'
+                    });
+                    $.post('/alt/create', {alias: $(':input[name=alias]').val()}).done(function (result) {
+                        if (result.status == 1) {
+                            login(result.xh_username);
+                            setTimeout(function () {
+                                load();
+                            }, 250);
+                        } else {
+                            maiyou.alert(result.info);
+                        }
+                    }).always(function () {
+                        setTimeout(function () {
+                            dialog.close();
+                        }, 125);
+                    });
+                }
+            });
+        });
+        $('.alt .list li').on('click', function () {
+            login($(this).find(':input').val());
+        });
+        $('.alt .user a').on('click', function (event) {
+            event.preventDefault();
+            var self = this;
+            $(document).dialog({
+                type: 'confirm',
+                content: '确定注销当前账号吗？',
+                onClickConfirmBtn: function () {
+                    var dialog = $(document).dialog({
+                        type: 'notice',
+                        infoText: '加载中...'
+                    });
+                    $.get($(self).attr('href')).always(function () {
+                        dialog.close();
+                        maiyou.logoutXh();
+                    });
+                }
+            });
+        });
+        $('.alt .action button.test').on('click', function () {
+            $(document).dialog({
+                type: 'confirm',
+                titleText: '请输入测试小号或交易单号',
+                content: '<input type="text" name="xh_username" placeholder="请输入测试小号或交易单号" autofocus >',
+                onClickConfirmBtn: function () {
+                    var dialog = $(document).dialog({
+                        type: 'notice',
+                        infoText: '加载中...'
+                    });
+                    $.get('/alt/test', {xh_username: $(':input[name=xh_username]').val()}).done(function (result) {
+                        if (result.status == 1) {
+                            maiyou.loginXh(result.username, result.sign, result.lastlogintime, result.token, result.xh_username);
+                        } else {
+                            maiyou.alert(result.info);
+                        }
+                    }).always(function () {
+                        setTimeout(function () {
+                            dialog.close();
+                        }, 125);
+                    });
+                }
+            });
+        });
+        $('.alt .activeButton button').on('click', function () {
+            var self = this;
+            var id = $(this).data('id');
+            var title = $(self).html();
+            if (id == 'news') {
+                altDilog({
+                    title: news.title ? news.title : title,
+                    content: news.content ? news.content : '<p style="font-size: 16px;margin: 5% auto;text-align: center;">暂无</p>'
+                });
+            }else{
+                $('.loading').show();
+                $.getJSON('alt/' + id).done(function (result) {
+                    altDilog({
+                        title: $(self).html(),
+                        content: result.data ? result.data : '<p style="font-size: 16px;margin: 5% auto;text-align: center;">暂无</p>'
+                    });
+                }).always(function () {
+                    $('.loading').hide();
+                });
+            }
+        });
+    });
+    $(function () {
+        function boxappAnimate() {
+            var left = 0;
+            if ($('.boxapp a').position().left == 0) {
+                left = -($('.boxapp a').width() - $('.boxapp section').width());
+            }
+            $('.boxapp section').animate({left: left}, 2000, function () {
+                setTimeout(function () {
+                    boxappAnimate();
+                }, 1000);
+            });
+        }
+
+        boxappAnimate();
+    });
+
+    function openBoxApp(force) {
+
+        var name;
+        var url;
+                if (navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1) {
+            name = 'com.maiyou.gamebox';
+            url = 'http://app.milu.com?open=';
+        } else {
+            name = '985APP';
+            url = 'http://app.milu.com?a=w8v6&open=';
+        }
+        // alert(name);
+                if (force) {
+            maiyou.open(maiyou.urlParam('a', 'c1mt', url));
+        } else {
+            maiyou.openApp(name, maiyou.urlParam('a', 'c1mt', url));
+        }
+    }
+</script>
+</section>
+<section id="mobileRegister" data-view="true" data-view-title="注册">
+    <div class="register width">
+    <header>
+            <a href="javascript:View.back()" class="back fa fa-angle-left"></a>
+        <div class="title">手机账号注册</div>
+</header>    <form action="/register" method="post" name="register">
+                    <input type="hidden" name="type" value="mobile">
+            <section class="register">
+                <div class="from">
+                    <ul>
+                        <li>
+                            <i class="fa fa-mobile"></i>
+                            <input type="text" name="mobile" class="username" placeholder="请输入11位手机号">
+                        </li>
+                        <li class="code">
+                            <i class="fa fa-check-square-o"></i>
+                            <input type="text" name="code" placeholder="请输入验证码">
+                            <span class="sendsms" data-second="0" data-url="/registerSendSmsCode">获取验证码</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="password" placeholder="请输入6-18位登录密码">
+                        </li>
+                    </ul>
+                </div>
+                <div class="button"><input type="submit" value="立即注册"></div>
+                <div class="action">
+                    <a href="/login" data-view-rel="register">用户名注册</a>
+                    <a href="/registerContract" data-view-rel="registerContract">注册即同意《服务条款》</a>
+                </div>
+            </section>
+            </form>
+    <script>
+            </script>
+</div></section>
+<section id="register" data-view="true" data-view-title="注册">
+    <div class="register width">
+    <header>
+            <a href="javascript:View.back()" class="back fa fa-angle-left"></a>
+        <div class="title">用户名注册（不推荐）</div>
+</header>    <form action="/register" method="post" name="register">
+                    <section class="register">
+                <div class="from">
+                    <ul>
+                        <li class="clear">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="username" class="username" placeholder="小写字母开头，6-16位用户名" value="" data-value="">
+                            <div class="operate">
+                                <div class="rand"><img src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/img/dice.jpg" alt=""></div>
+                                <div class="clear fa fa-remove"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="password" placeholder="请设置6-16位登录密码">
+                        </li>
+                        <li>
+                            <i class="fa fa-repeat"></i>
+                            <input type="password" name="password_repeat" placeholder="请再次输入密码">
+                        </li>
+                    </ul>
+                </div>
+                <div class="button"><input type="submit" value="立即注册"></div>
+                <div class="action">
+                    <a href="/login?type=mobile" data-view-rel="mobileRegister">手机快速注册</a>
+                    <a href="/registerContract" data-view-rel="registerContract">注册即同意《服务条款》</a>
+                </div>
+            </section>
+            </form>
+    <script>
+                $(function () {
+            $('form[name=register]').submit(function (event) {
+                event.preventDefault();
+                var form = $(this);
+                if ($(form).find(':input[name=mobile]').size() == 0) {
+                    if ($(form).find(':input[name=password]').val() != $(form).find(':input[name=password_repeat]').val()) {
+                        maiyou.alert('两次输入的密码不一致');
+                        return false;
+                    }
+                }
+                $('.loading').show();
+                $.post($(form).attr('action'), $(form).serialize()).always(function () {
+                    $('.loading').hide();
+                }).fail(function (request, error) {
+                    if (error == 'timeout' || request.status == 0) {
+                        maiyou.alert('暂无网络 请检查网络状态');
+                    } else if (error == 'error') {
+                        maiyou.alert(request.status + ' ' + request.statusText);
+                    } else {
+                        maiyou.alert(error);
+                    }
+                }).done(function (result) {
+                    if (result.status.succeed == 1) {
+                        maiyou.alert('注册成功');
+                        setTimeout(function () {
+                            View.navTo('login', {
+                                params: {
+                                    username: $(form).find(':input.username').val(),
+                                    password: $(form).find(':input[name=password]').val()
+                                }
+                            });
+                            $(form)[0].reset();
+                        }, 250);
+                    } else {
+                        maiyou.alert(result.status.error_description);
+                    }
+                });
+            });
+            $('.register .clear .rand').on('click', function () {
+                var self = this;
+                $(this).addClass('ing');
+                $.getJSON('/register').done(function (result) {
+                    $('.register :input[name=username]').val(result.username);
+                    $('.register :input[name=username]').data('value', result.username);
+                }).always(function () {
+                    setTimeout(function () {
+                        $(self).removeClass('ing');
+
+                    }, 250);
+                    setTimeout(function () {
+                        $('.register :input[name=username]').trigger('input');
+                    }, 500);
+                });
+            });
+            $('.register .clear .clear').on('click', function () {
+                $('.register :input[name="username"]').val('');
+                $('.register :input[name="username"]').trigger('input');
+            });
+            $('.register :input[name="username"]').on('input', function () {
+                if ($(this).val()) {
+                    $('.register .clear .clear').addClass('active');
+                } else {
+                    $('.register .clear .clear').removeClass('active');
+                }
+            });
+            $('.register :input[name="username"]').trigger('input');
+            $('.register :input[name="password"]').on('input', function () {
+                if (/.*[\u4e00-\u9fa5]+.*$/.test($(this).val())) {
+                    $(this).val('');
+                    maiyou.alert('不能包含中文字符！');
+                }
+            });
+        });
+            </script>
+</div></section>
+<section id="findPass" data-view="true" data-view-title="找回密码">
+    <div class="body width findPass">
+    <header>
+            <a href="javascript:View.back()" class="back fa fa-angle-left"></a>
+        <div class="title">找回密码</div>
+</header>    <div class="user-bind-mobile">
+        <form action="/findPass" method="post" name="findpass">
+            <div class="item">
+                <input type="text" name="username" placeholder="请输入用户名">
+            </div>
+            <div class="item sms">
+                <input type="text" name="mobile" placeholder="绑定的手机" disabled>
+                <span class="sendsms" data-second="0" data-url="/findPassSendSmsCode">发送验证码</span>
+            </div>
+            <div class="item">
+                <input type="text" name="verify_code" placeholder="请输入您的验证码">
+            </div>
+            <div class="item">
+                <input type="password" name="password" placeholder="请输入新密码">
+            </div>
+            <div class="item">
+                <input type="password" name="password_repeat" placeholder="重复输入">
+            </div>
+            <div class="item">
+                <input type="submit" value="提交">
+            </div>
+        </form>
+        <div class="tips">
+            <h1>
+                求助客服QQ：
+                <a href="javascript:maiyou.open('mqqwpa://im/chat?chat_type=wpa&uin=游戏任何问题，请加客服QQ号：1590424017&version=1&src_type=web&web_src=oicqzone.com')" class="qq">游戏任何问题，请加客服QQ号：1590424017</a>
+            </h1>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.findPass :input[name=username]').blur(function (event) {
+            var el = $(this);
+            var val = $(el).val();
+            if (val) {
+                $.get('/findPass', {username: val}, function (result) {
+                    if (result.status == 1) {
+                        mobile = result.data;
+                        $('.findPass :input[name=mobile]').val(mobile.substring(0, 3) + '****' + mobile.substring(7));
+                        $('.findPass :input[name=username]').data('error', '');
+                    } else {
+                        $('.findPass :input[name=mobile]').val(result.info);
+                        $('.findPass :input[name=username]').data('error', result.info);
+                    }
+                });
+            }
+        });
+        $('.findPass form[name=findpass]').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+            $.post($(form).attr('action'), $(form).serialize(), function (result) {
+                maiyou.alert(result.info);
+                if (result.status == 1) {
+                    setTimeout(function () {
+                                                View.navTo('login', {
+                            params: {
+                                username: $('.findPass :input[name=username]').val(),
+                                password: $('.findPass :input[name=password]').val()
+                            }
+                        });
+                                            }, 250);
+                }
+            });
+        });
+
+        $('.findPass :input[name="password"]').on('input', function () {
+            if (/.*[\u4e00-\u9fa5]+.*$/.test($(this).val())) {
+                $(this).val('');
+                maiyou.alert('不能包含中文字符！');
+            }
+        });
+    });
+</script>
+</section>
+<section id="registerContract" data-view="true" data-view-title="用户服务协议">
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑";
+        font-size: 16px;
+        line-height: 26px;
+        margin: 0px;
+        padding: 0px;
+        color: #4d4d4d;
+    }
+
+    #xieyi {
+        margin: 0px;
+        padding: 20px;
+    }
+
+    #xieyi p {
+        text-indent: 2em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .yans {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
+<div class="width">
+    <header>
+            <a href="javascript:View.back()" class="back fa fa-angle-left"></a>
+        <div class="title">用户服务协议</div>
+</header>    <div id="xieyi">
+        <p>请务必认真阅读和理解本《用户服务协议》（以下简称《协议》）中规定的所有权利和限制。除非您接受本《协议》条款，否则您无权注册、登录或&nbsp;使用本协议所涉及的相关服务。您一旦注册、登录、使用或以任何方式使用本《协议》所涉及的相关服务的行为将视为对本《协议》的接受，即表示您同意接受本&nbsp;《协议》各项条款的约束。如果您不同意本《协议》中的条款，请不要注册、登录或使用本《协议》相关服务。本《协议》是用户与西安麦游网络科技有限公司旗下运营的麦游网络平台（以下简称麦游网络）之间的法律协议。 </p>
+        <p>1.&nbsp;服务内容 </p>
+        <p>1.1&nbsp;麦游网络（网址：<a href="http://www.99maiyou.com">http://www.99maiyou.com</a>)，完全按照其发布的服务条款和操作规则提供基于互联网以及移动互联网的相关服务（以下简称网络服务）&nbsp;麦游网络服务的具体内容由麦游网络根据实际情况提供，包括但不限于麦游网络等。 </p>
+        <p>1.2&nbsp;您一旦注册成功成为用户，您将得到一个密码和帐号，您需要对自己在帐户中的所有活动和事件负全责。如果由于您的过失导致您的帐号和密码脱离您的控制，则由此导致的针对您、麦游网络或任何第三方造成的损害，您将承担全部责任。 </p>
+        <p>1.3&nbsp;用户理解并接受，麦游网络仅提供相关的网络服务，除此之外与相关网络服务有关的设备（如个人电脑、手机、及其他与接入互联网或移动互联网有关的装&nbsp;置）及所需的费用（如为接入互联网而支付的电话费及上网&nbsp;费、为使用移动网而支付的手机费）均应由用户自行负担。 </p>
+        <p>2.&nbsp;用户使用规则 </p>
+        <p>2.1&nbsp;用户在申请使用麦游网络服务时，必须向麦游网络提供准确的个人资料，如个人资料有任何变动，必须及时更新。因用户提供个人资料不准确、不真实而引发的一切后果由用户承担。 </p>
+        <p>2.2&nbsp;用户不应将其帐号、密码转让、出借或以任何脱离用户控制的形式交由他人使用。如用户发现其帐号遭他人非法使用，应立即通知麦游。因黑客行为或用户的保管疏忽导致帐号、密码遭他人非法使用，麦游网络不承担任何责任。 </p>
+        <p>2.3&nbsp;用户应当为自身注册帐户下的一切行为负责，因用户行为而导致的用户自身或其他任何第三方的任何损失或损害，麦游不承担责任。 </p>
+        <p>2.4&nbsp;用户理解并接受我网提供的服务中可能包括广告，用户同意在使用过程中显示麦游网络和第三方供应商、合作伙伴提供的广告。 </p>
+        <p>2.5&nbsp;用户在使用麦游网络服务过程中，必须遵循以下原则： </p>
+        <p>2.5.1&nbsp;遵守中国有关的法律和法规； </p>
+        <p>2.5.2&nbsp;遵守所有与网络服务有关的网络协议、规定和程序； </p>
+        <p>2.5.3&nbsp;不得为任何非法目的而使用网络服务系统； </p>
+        <p>2.5.4&nbsp;不得利用麦游网络服务系统进行任何可能对互联网或移动网正常运转造成不利影响的行为； </p>
+        <p>2.5.5&nbsp;不得利用麦游网络提供的网络服务上传、展示或传播任何虚假的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、庸俗淫秽的或其他任何非法的信息资料； </p>
+        <p>2.5.6&nbsp;不得侵犯麦游网络和其他任何第三方的专利权、著作权、商标权、名誉权或其他任何合法权益； </p>
+        <p>2.5.7&nbsp;不得利用麦游网络服务系统进行任何不利于麦游网络的行为； </p>
+        <p>2.5.8&nbsp;如发现任何非法使用用户帐号或帐号出现安全漏洞的情况，应立即通告麦游网络。 </p>
+        <p>2.6&nbsp;如用户在使用网络服务时违反任何上述规定，麦游网络或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户收藏的内容等、暂停或终止用户使用网络服务的权利）以减轻用户不当行为造成的影响。 </p>
+        <p>3.&nbsp;服务变更、中断或终止 </p>
+        <p>3.1&nbsp;鉴于网络服务的特殊性，用户同意麦游网络有权根据业务发展情况随时变更、中断或终止部分或全部的网络服务而无需通知用户，也无需对任何用户或任何第三方承担任何责任； </p>
+        <p>3.2&nbsp;用户理解，麦游网络需要定期或不定期地对提供网络服务的平台（如互联网网站、移动网络等）或相关的设备进行检修或者维护，如因此类情况而造成网络服务在合理时间内的中断，麦游网络无需为此承担任何责任，但麦游网络应尽可能事先进行通告。 </p>
+        <p>3.3&nbsp;如发生下列任何一种情形，麦游网络有权随时中断或终止向用户提供本《协议》项下的网络服务（包括收费网络服务）而无需对用户或任何第三方承担任何责任： </p>
+        <p>3.3.1&nbsp;用户提供的个人资料不真实； </p>
+        <p>3.3.2&nbsp;用户违反本《协议》中规定的使用规则。 </p>
+        <p>4.&nbsp;知识产权 </p>
+        <p>4.1&nbsp;麦游网络提供的网络服务中包含的任何文本、图片、图形、音频和/或视频资料均受版权、商标和/或其它财产所有权法律的保护，未经相关权利人同意，上述资料均不得用于任何商业目的。 </p>
+        <p>4.2&nbsp;麦游网络为提供网络服务而使用的任何软件（包括但不限于软件中所含的任何图象、照片、动画、录像、录音、音乐、文字和附加程序、随附的帮助材料）&nbsp;的一切权利均属于该软件的著作权人，未经该软件的著作权人许可，用户不得对该软件进行反向工程（reverseengineer）、反向编译&nbsp;（decompile）或反汇编（disassemble）。 </p>
+        <p>5.&nbsp;隐私保护 </p>
+        <p>5.1&nbsp;保护用户隐私是麦游网络的一项基本政策，麦游网络保证不对外公开或向第三方提供单个用户的注册资料及用户在使用网络服务时存储在麦游网络的非公开内容，但下列情况除外： </p>
+        <p>5.1.1&nbsp;事先获得用户的明确授权； </p>
+        <p>5.1.2&nbsp;根据有关的法律法规要求； </p>
+        <p>5.1.3&nbsp;按照相关政府主管部门的要求； </p>
+        <p>5.1.4&nbsp;为维护社会公众的利益； </p>
+        <p>5.1.5&nbsp;为维护麦游网络的合法权益。 </p>
+        <p>5.2&nbsp;麦游网络可能会与第三方合作向用户提供相关的网络服务，在此情况下，如该第三方同意承担与麦游网络同等的保护用户隐私的责任，则麦游网络有权将用户的注册资料等提供给该第三方。 </p>
+        <p>5.3&nbsp;在不透露单个用户隐私资料的前提下，麦游网络有权对整个用户数据库进行分析并对用户数据库进行商业上的利用。 </p>
+        <p>5.4&nbsp;麦游网络制定了以下四项隐私权保护原则，指导我们如何来处理产品中涉及到用户隐私权和用户信息等方面的问题： </p>
+        <p>（1）利用我们收集的信息为用户提供有价值的产品和服务。 </p>
+        <p>（2）开发符合隐私权标准和隐私权惯例的产品。 </p>
+        <p>（3）将个人信息的收集透明化，并由权威第三方监督。 </p>
+        <p>（4）尽最大的努力保护我们掌握的信息。 </p>
+        <p>您可通过麦游网络网站查看我们有关隐私保护的详细内容 </p>
+        <p>6.&nbsp;免责声明 </p>
+        <p>6.1&nbsp;麦游网络不担保网络服务一定能满足用户的要求，也不担保网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作担保。 </p>
+        <p>6.2&nbsp;麦游网络不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由麦游网络实际控制的任何网页上的内容，麦游网络不承担任何责任。 </p>
+        <p>6.3&nbsp;对于因电信系统或互联网网络故障、计算机故障或病毒、信息损坏或丢失、计算机系统问题或其它任何不可抗力原因而产生损失，麦游网络不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。 </p>
+        <p>6.4&nbsp;&nbsp;麦游网络有权但无义务，改善或更正本服务任何部分之任何疏漏、错误。 </p>
+        <p>7.&nbsp;法律及争议解决 </p>
+        <p>7.1&nbsp;本协议适用中华人民共和国法律。 </p>
+        <p>7.2&nbsp;因本协议引起的或与本协议有关的任何争议，各方应友好协商解决；协商不成的，任何一方均可将有关争议提交至北京仲裁委员会并按照其届时有效的仲裁规则仲裁；仲裁裁决是终局的，对各方均有约束力。 </p>
+        <p>8.&nbsp;其他条款 </p>
+        <p>8.1&nbsp;如果本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，或违反任何适用的法律，则该条款被视为删除，但本协议的其余条款仍应有效并且有约束力。 </p>
+        <p>8.2&nbsp;麦游网络有权随时根据有关法律、法规的变化以及公司经营状况和经营策略的调整等修改本协议，而无需另行单独通知用户。修改后的协议会在麦游网络网站（<a href="http://www.99maiyou.com">http://www.99maiyou.com</a>）&nbsp;上公布。用户可随时通过麦游网络网站浏览最新服务协议条款。当发生有关争议时，以最新的协议文本为准。如果不同意麦游网络对本协议相关条&nbsp;款所做的修改，用户有权停止使用网络服务。如果用户继续使用网络服务，则视为用户接受麦游网络对本协议相关条款所做的修改。 </p>
+        <p>8.3&nbsp;用户对服务之任何部分或本服务条款的任何部分之意见及建议可通过客户服务部门与麦游网络联系，麦游网络保留本服务条款之解释权与修改权。 </p>
+        <p>&nbsp;</p>
+    </div>
+</div></section>
+
+<div class="loading" style="display: none;position: fixed;z-index: 917;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;background: rgba(0,0,0, .5);">
+    <section style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); background: rgba(0,0,0, .75);padding: .5em 1em;font-size: 15px;color: #ffffff; border-radius: .25em;">loading...</section>
+</div>
+
+<script>
+    $(function () {
+        var el = location.hash;
+        if ($(el).size() > 0) {
+            $(el).attr('data-view-default', 'true');
+        } else {
+            $('[data-view=true]').first().attr('data-view-default', true);
+        }
+
+        $('#xieyi a').click(function (event) {
+            event.preventDefault();
+            maiyou.open($(this).attr('href'));
+        });
+    });
+</script>
+
+<script src="//cdn1.oss.99maiyou.com/libs/localforage/1.7.3/localforage.min.js"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/viewjs/view.1.6.0.min.js"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/viewjs/view.switch.js"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/laytpl/1.1/laytpl.js"></script>
+<link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/dialog2/css/dialog.css"/>
+<link rel="stylesheet" href="//cdn1.oss.99maiyou.com/libs/dialog2/css/css.css?version=20200625"/>
+<script src="//cdn1.oss.99maiyou.com/libs/dialog2/js/dialog.js"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/dialog2/js/js.js?version=20200625"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/js/maiyou.js?version=20200618"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/js/sms.js?version=20200625"></script>
+<script src="//cdn1.oss.99maiyou.com/libs/sdk2/assets/js/log.js?version=20200625"></script>
+
+<!--<section style="position: fixed;z-index: 917917;bottom: 25%;left: 0;right: 0;padding: .5em;text-align: center;">
+    <button style="padding: .5em;font-size: 16px;" id="singleBack">singleBack</button>
+</section>-->
+<script>
+    maiyou.singleBack = function () {
+        var view = View.getActiveView();
+        if (view.id == 'login') {
+            maiyou.close();
+        } else {
+            // View.back();
+        }
+    };
+    $(function () {
+        $('#singleBack').click(function () {
+            maiyou.singleBack();
+        });
+    });
+</script>
+
+</body>
+</html>

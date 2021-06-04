@@ -1,0 +1,1404 @@
+.width {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.user-index {
+    background-color: #eee;
+}
+
+div.user-index {
+    padding: 4%;
+}
+
+.user-index .group {
+    margin-top: 4%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    overflow: hidden;
+    padding: 0 2.5%;
+}
+
+.user-index .group:first-child {
+    margin-top: auto;
+}
+
+.user-index .item {
+    padding: 10px;
+    position: relative;
+    line-height: 30px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+.user-index .group .item:first-child {
+    border-top: none;
+}
+
+.user-index .item > a {
+    display: block;
+}
+
+.user-index .item h1 {
+    float: left;
+    font-size: 16px;
+    color: #000000;
+}
+
+.user-index .item span {
+    float: right;
+    color: #3ba0e4;
+}
+
+.user-index .item span.special {
+    color: red;
+}
+
+.user-index .item i {
+    float: right;
+    font-size: 18px;
+    color: #cccccc;
+    font-weight: bold;
+    margin-left: 2.5%;
+}
+
+.user-index .item img {
+    display: block;
+    float: left;
+    height: 30px;
+    margin-right: 2.5%;
+}
+
+.user-modify-pass {
+    padding: 10px 25px;
+}
+
+.user-modify-pass .item {
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-modify-pass .item span {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 15px;
+    bottom: 0;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    color: #f5842d;
+}
+
+.user-modify-pass .item input[type=text],
+.user-modify-pass .item input[type=password] {
+    border: 1px solid #f5842d;
+    height: 42px;
+    line-height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 15px;
+    padding-left: 40px;
+}
+
+.user-modify-pass .item input[type=submit] {
+    border: none;
+    line-height: 37.5px;
+    border-radius: 18.75px;
+    width: 100%;
+    font-size: 17px;
+    background-color: #f5842d;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.user-bind-mobile {
+    padding: 10px;
+}
+
+.user-bind-mobile .tips {
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.user-bind-mobile .tips a {
+    color: #3ba0e4;
+    text-decoration: underline;
+}
+
+.user-bind-mobile .tips > span {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.user-bind-mobile .tips h1 {
+    font-size: 16px;
+    line-height: 1.85;
+    margin-top: 5px;
+}
+
+.user-bind-mobile .tips p {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.75;
+}
+
+.user-bind-mobile .tips p span {
+    color: #e96941;
+}
+
+.user-bind-mobile .tips p:last-child {
+    color: #949494;
+}
+
+.user-bind-mobile .item {
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.user-bind-mobile .item input[type=text],
+.user-bind-mobile .item input[type=password] {
+    border: 1px solid #f5842d;
+    height: 42px;
+    line-height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.user-bind-mobile .item.sms input[type=text] {
+    padding-right: 140px;
+}
+
+.user-bind-mobile .item span {
+    display: block;
+    position: absolute;
+    z-index: 11;
+    right: 11px;
+    top: 1px;
+    bottom: 1px;
+    background-color: #f5842d;
+    border-radius: 20px;
+    width: 115px;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 40px;
+}
+
+.user-bind-mobile .item input[type=submit] {
+    border: none;
+    line-height: 37.5px;
+    border-radius: 18.75px;
+    width: 100%;
+    font-size: 17px;
+    background-color: #f5842d;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.user-login {
+    padding: 10px 25px;
+}
+
+.user-login .home {
+    text-align: right;
+    color: #f5842d;
+    font-size: 16px;
+}
+
+.user-login .home a {
+    color: #f5842d;
+}
+
+.user-login .home i {
+    font-size: 18px;
+    margin-right: .25em;
+    margin-top: 2px;
+}
+
+.user-login .home i,
+.user-login .home span {
+    vertical-align: middle;
+    margin-top: 0px;
+}
+
+.user-login .logo img {
+    display: block;
+    max-width: 100%;
+    height: 75px;
+    margin: 12% auto 7% auto;
+}
+
+.user-login .item {
+    margin-top: 15px;
+    position: relative;
+}
+
+.user-login .item span {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 15px;
+    bottom: 0;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    color: #f5842d;
+}
+
+.user-login .item input[type=text],
+.user-login .item input[type=password] {
+    border: 1px solid #f5842d;
+    height: 42px;
+    line-height: 40px;
+    border-radius: 23.5px;
+    width: 100%;
+    font-size: 15px;
+    padding-left: 50px;
+    padding-right: 15%;
+}
+
+.user-login .item input[type=submit] {
+    border: none;
+    line-height: 35px;
+    border-radius: 17.5px;
+    width: 100%;
+    font-size: 17px;
+    background-color: #f5842d;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.user-login .item i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    margin-top: -17px;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.user-login .item i.waf6 {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.user-login .users {
+    position: absolute;
+    z-index: 917;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.user-login .users.active {
+    transform: scaleY(1);
+}
+
+.user-login .users ul {
+    padding: 2.5%;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.user-login .users li {
+    padding: 2.5%;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+
+.user-login .users li:first-child {
+    border-top: none;
+}
+
+.user-login .users li p {
+    padding-right: 5%;
+    font-size: 14px;
+}
+
+.user-login .users li i {
+    position: absolute;
+    z-index: 917;
+    top: 50%;
+    right: 2.5%;
+    font-size: 18px;
+    width: 25px;
+    height: 25px;
+    margin-top: -12.5px;
+    text-align: center;
+}
+
+.user-login .action {
+    font-size: 16px;
+    margin-top: 5%;
+}
+
+.user-login .action a:first-child {
+    float: left;
+    color: #f5842d;
+}
+
+.user-login .action a:last-child {
+    float: right;
+    color: red;
+}
+
+.user-login .bottom {
+    position: absolute;
+    bottom: 2.5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.user-login .bottom a {
+    color: #f5842d;
+    text-decoration: underline;
+}
+
+.user-login .bottomTips {
+    margin-top: 7.5px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: red;
+    padding: 0 19px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.about .jj {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.about .jj span {
+    font-size: 64px;
+}
+
+.about .jj p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.about .item {
+    background-color: #eeeeee;
+    width: 85%;
+    border-radius: 27.5px;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.75;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.about .item span {
+    margin-right: 5px;
+}
+
+.about .info {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.tab {
+    height: 45px;
+    font-size: 16px;
+    margin-top: 5px;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    overflow: hidden;
+    height: 100%;
+    line-height: 45px;
+}
+
+.tab a.current {
+    line-height: 43px;
+    border-bottom: 2px solid #3ba0e4;
+}
+
+.content {
+    padding: 5px 10px 10px 10px;
+}
+
+.content .faq dl {
+    padding: 5px;
+    border-bottom: 1px solid #f9f9f9;
+    line-height: 1.65;
+}
+
+.content .faq dl.show {
+    color: #3ba0e4;
+}
+
+.content .faq dl dt {
+    padding-right: 25px;
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.content .faq dl dt:after {
+    content: '>';
+    display: block;
+    float: right;
+    height: 20px;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.content .faq dl dd {
+    margin-top: 5px;
+    overflow: hidden;
+    display: none;
+    font-size: 14px;
+}
+
+.content .faq dl.show dd {
+    display: block;
+}
+
+.content .faq a {
+    color: blue;
+}
+
+.content .cs .info {
+    font-size: 16px;
+    color: #3ba0e4;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.content .cs .item {
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.content .cs .item h1 {
+    display: inline-block;
+    font-size: 14px;
+    padding: .25em .5em;
+    background: rgb(246, 116, 2);
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #bbb;
+}
+
+.content .cs .item ul {
+    margin-top: 10px;
+}
+
+.content .cs .item ul li {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    position: relative;
+    line-height: 1.75;
+    padding-right: 65px;
+}
+
+.content .cs .item ul li span {
+    display: block;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    right: 0;
+    margin-top: -15px;
+    height: 27.5px;
+    line-height: 27.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgb(255, 152, 31);
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination > li {
+    display: inline;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+}
+
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.user-pay .list {
+    padding: 2.5%;
+}
+
+.user-pay .list li {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 2.5%;
+    margin-top: 3%;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.user-pay .list li:first-child {
+    margin-top: 0;
+}
+
+.user-pay .list li p:nth-child(odd) {
+    float: left;
+}
+
+.user-pay .list li p:nth-child(even) {
+    float: right;
+}
+
+.user-pay .empty {
+    font-size: 16px;
+    text-align: center;
+    padding: 10% 0;
+}
+
+.userAuthentication {
+    padding: 5%;
+}
+
+.userAuthentication .info {
+    font-size: 16px;
+}
+
+.userAuthentication .item {
+    margin-top: 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.userAuthentication .item span {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 15px;
+    bottom: 0;
+    font-size: 32px;
+    line-height: 47px;
+    text-align: center;
+    color: #f5842d;
+    width: 50px;
+}
+
+.userAuthentication .item input[type=text],
+.userAuthentication .item input[type=password] {
+    border: 1px solid #f5842d;
+    height: 47px;
+    line-height: 45px;
+    border-radius: 23.5px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 75px;
+}
+
+.userAuthentication .item input[type=submit] {
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 20px;
+    background-color: #f5842d;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.giftPackageNav {
+    margin: 3% 2.5% auto 2.5%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.giftPackageNav ul {
+    overflow: hidden;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.giftPackageNav li {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+.giftPackageNav a {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 1.5%;
+    border-radius: 5px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.giftPackageNav a:hover,
+.giftPackageNav a.active {
+    color: #3ba0e4;
+    border: 1px solid #3ba0e4;
+}
+
+.giftPackageList .list {
+    padding: 3% 2.5%;
+}
+
+.giftPackageList .list li {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-top: 3%;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.giftPackageList .list li:first-child {
+    margin-top: auto;
+}
+
+.giftPackageList .list li a {
+    display: block;
+    padding: 2.5%;
+}
+
+.giftPackageList .empty {
+    font-size: 16px;
+    text-align: center;
+    margin: 5% 2.5%;
+}
+
+.giftPackageDetail {
+    padding: 2.5%;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.giftPackageDetail .detail {
+    position: relative;
+}
+
+.giftPackageDetail .detail h1 {
+    color: #10c0ed;
+    font-size: 18px;
+}
+
+.giftPackageDetail .detail h2 {
+    color: #48d78f;
+}
+
+.giftPackageDetail .detail p {
+    margin-top: 1%;
+    color: #000000;
+}
+
+.giftPackageDetail .detail button {
+    float: right;
+    margin: 2.5%;
+    background-color: #5ecab1;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+    padding: 1% 2.5%;
+    font-size: 16px;
+}
+
+.giftPackageDetail .detail button[disabled] {
+    background-color: #cccccc;
+}
+
+.giftPackageDetail .empty {
+    padding: 10% 0;
+    text-align: center;
+}
+
+.giftPackageDetail .tips {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+
+.giftPackageDetail .tips.active {
+    display: block;
+}
+
+.giftPackageDetail .tips section {
+    display: inline-block;
+    position: relative;
+    top: 25%;
+    background-color: #ffffff;
+    padding: 5% 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ffffff;
+    min-width: 75%;
+    max-width: 90%;
+}
+
+.giftPackageDetail .tips h1 {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #10c0ed;
+}
+
+.giftPackageDetail .tips p {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 10%;
+    color: #48d78f;
+}
+
+.giftPackageDetail .tips button {
+    background-color: #5ecab1;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 5% 15%;
+    font-size: 16px;
+    border: none;
+    margin-top: 12.5%;
+}
+
+.messageList .empty {
+    margin: 10% auto;
+    font-size: 16px;
+    text-align: center;
+}
+
+footer .placeholder {
+    padding-top: 12.5%;
+}
+
+footer .container {
+    position: fixed;
+    z-index: 917;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer .container .width {
+    height: 100%;
+    overflow: hidden;
+}
+
+footer .container .width > div {
+    padding-top: 12.5%;
+    position: relative;
+    overflow: hidden;
+}
+
+footer .container section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+footer .container a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22.5%;
+    height: 100%;
+    position: relative;
+}
+
+footer .container a.active {
+    color: #3ba0e4;
+}
+
+footer .container p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+footer .container .fa {
+    display: block;
+    font-size: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 2.5%;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background-color: #ffffff;
+}
+
+header .title {
+    font-size: 17px;
+}
+
+header .back {
+    display: block;
+    position: absolute;
+    top: 47.5%;
+    left: 0;
+    padding: 10px 2.5%;
+    font-size: 30px;
+    line-height: 32px;
+    height: 52px;
+    overflow: hidden;
+    margin-top: -26px;
+}
+
+body.register {
+    background-color: #f5f5f5;
+}
+
+section.register {
+    padding: 3%;
+    margin-top: 1%;
+}
+
+.register .from {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f5f5f5;
+    padding: 1%;
+}
+
+.register .from li {
+    border-top: 1px solid #eee;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+    padding: 5px 10px 10px 55px;
+}
+
+.register .from li.clear {
+    padding-right: 10%;
+}
+
+.register .from li:first-child {
+    border-top: none;
+    margin-top: auto;
+}
+
+.register .from li i.fa {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    bottom: 5px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    width: 35px;
+    overflow: hidden;
+}
+
+.register .from li i.fa-mobile {
+    font-size: 24px;
+}
+
+.register .from li input {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 32.5px;
+    font-size: 15px;
+}
+
+.register .from li.code {
+    padding-right: 35%;
+}
+
+.register .from li span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background-color: #f5842d;
+    padding: 0 2.5%;
+    border-radius: 5px;
+    line-height: 30px;
+    margin-top: -15px;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.register .from li .operate {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 25px;
+    margin-top: -10px;
+    text-align: center;
+    color: #666;
+}
+
+.register .from li .rand {
+    float: left;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.register .from li .rand img {
+    display: block;
+    height: 20px;
+    margin: 2.5px auto;
+
+}
+
+@-webkit-keyframes haha1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.register .from li .rand.ing img {
+    animation: haha1 .5s linear infinite;
+}
+
+.register .from li .clear {
+    float: left;
+    display: none;
+    margin: 0 7.5px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.register .from li .clear.active {
+    display: block;
+}
+
+.register .button {
+    margin-top: 3.5%;
+}
+
+.register .button input {
+    background-color: #f5842d;
+    padding: 2.5%;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.register .action {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 3%;
+}
+
+.register .action a:first-child {
+    float: left;
+    color: #f5842d;
+}
+
+.register .action a {
+    float: right;
+    color: #bebebe;
+}
+
+.microAuthentication {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.sureIdCardcation {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+.sureIdCardcation:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.microAuthentication:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.microAuthentication .authenticationContainer {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 10px;
+    min-width: 82.5%;
+}
+
+
+.authenticationContainer1{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 10px;
+    min-width: 82.5%;
+    z-index: 100;
+    padding: 10px;
+    height: 295px;
+    font-size: 15px;
+}
+.authenticationTitle1{
+    border-bottom: 1px solid #ccc;
+    /*display: flex;*/
+    /*align-items: center;*/
+}
+
+
+.sureIdCardcation .sureIdCard {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 10px;
+    min-width: 82.5%;
+}
+
+
+.microAuthentication .authenticationTitle {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.sureIdCardcation .sureIdCard {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.microAuthentication .authenticationTitle .text {
+    flex: 1;
+    padding: 7.5px;
+    color: #f5842d;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sureIdCardcation .sureIdCard .text {
+    flex: 1;
+    padding: 7.5px;
+    color: #f5842d;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sureIdCardcation .sureIdCard .back,
+.sureIdCardcation .sureIdCard .close {
+    width: 50px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+.microAuthentication .authenticationTitle .back,
+.microAuthentication .authenticationTitle .close {
+    width: 50px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 22px;
+}
+.close1{
+    background: url(../img/close.png) center center no-repeat;
+    width: 50px;
+    padding: 10px 0;
+    float: right;
+    margin-top: -10%;
+}
+.sureIdCardcation .sureIdCard .close {
+    background: url(../img/close.png) center center no-repeat;
+}
+
+.microAuthentication .authenticationTitle .close {
+    background: url(../img/close.png) center center no-repeat;
+}
+
+.microAuthentication .authenticationContent {
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.sureIdCardcation .sureIdCard {
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.microAuthentication .authenticationContent h1 {
+    font-size: 12px;
+}
+
+.sureIdCardcation .sureIdCard h1 {
+    font-size: 12px;
+}
+
+.microAuthentication .authenticationContent p {
+    text-indent: 2em;
+    margin-bottom: 10px;
+}
+
+.microAuthentication .authenticationContent div {
+    margin-top: 10px;
+    color: red;
+    font-size: 10px;
+    text-align: center;
+}
+
+.sureIdCardcation .sureIdCard div {
+    margin-top: 10px;
+    color: red;
+    font-size: 10px;
+    text-align: center;
+}
+
+.microAuthentication .authenticationContent form {
+    margin-top: 10px;
+}
+
+.microAuthentication .authenticationContent form input {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.microAuthentication .authenticationContent form input:first-child {
+    margin-top: auto;
+}
+
+.microAuthentication .authenticationContent form input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 7.5px 10px;
+    line-height: 1.75;
+}
+
+.microAuthentication .authenticationContent form input[type=submit] {
+    border: none;
+    line-height: 2;
+    width: 100%;
+    font-size: 15px;
+    background-color: #f5842d;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
